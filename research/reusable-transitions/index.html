@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learning Reusable Transition Structures for Query Generation | Hsuan-Yi Lee</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/group.css">
+    </head>
+    <body><a class="skip" href="#main">Skip to content</a>
+        <div class="container">
+            <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->
+            <div class="header d-flex
+                        flex-column
+                        flex-md-row justify-content-md-between">
+                <a href="/" class="site-name">Hsuan-Yi Lee</a>
+                <nav aria-label="Main navigation"><ul class="nav nav-pills justify-content-center"><li class="nav-item"><a class="nav-link "  href="/">Home</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="/research/">Research</a></li><li class="nav-item"><a class="nav-link "  href="/projects/">Projects</a></li><li class="nav-item"><a class="nav-link "  href="/experience/">Experience</a></li></ul></nav>
+            </div>
+
+            
+
+            
+
+            <main id="main"><a class="back" href="/research/">← Research</a><h1 class="detail-title">Learning Reusable Transition Structures for Query Generation</h1><div class="prose"><h3>Motivation</h3><p>In black-box model extraction, one often begins with a set of available images and queries a teacher to obtain predictions. However, a static query set may cover only a small portion of the teacher's functionality. One possible response is to generate new queries by transforming existing images.</p><p>The crucial question is not whether an edit changes an image or even changes a teacher's output. It is <strong>whether the edit reveals information that has not already been observed</strong>. A transformation can produce large prediction changes while revisiting familiar states, and an edit that works on one starting image may have a different meaning on another.</p><p>My current work investigates whether there are local, reusable regularities in the relationship between an image transformation and a teacher's response. If such regularities exist, they may provide a foundation for predicting which queries are likely to reach informative regions without exhaustively trying every edit.</p><h3>Research questions</h3><ul><li>Can we construct an image-transformation space with actions that are sufficiently consistent to compare and reuse?</li><li>How should we distinguish <strong>response movement</strong> from <strong>coverage expansion</strong> and <strong>downstream teaching utility</strong>?</li><li>Do nearby states or similar actions exhibit predictable local response transitions?</li><li>Can a model learn these relationships from limited prior observations, rather than simply memorize the individual images or endpoints?</li><li>Does information learned from multiple teachers help adaptation to a previously unseen teacher?</li></ul><h3>Research trajectory</h3><p><strong>Phase 1 — Controllable transformations.</strong> I first explored deterministic, structured image edits designed to support repeated interventions from a limited set of starting images. The A4 configuration included constrained spectral or Gabor-like interventions, with certain pattern parameters fixed while edit strength varied. These tests helped establish that repeated edits could produce measurable trajectories in teacher-response space.</p><p><strong>Phase 2 — Beyond root-specific directions.</strong> A limitation of the early design was that trajectories could remain tied to the initial image and offer restricted directional diversity. This motivated A5: an exploration of more flexible, brushstroke-based image generation inspired by neural painting, with the goal of separating the meaning of an action from a particular root image.</p><p><strong>Phase 3 — Local transition learning.</strong> Building on these generators, I investigated whether a memory-based model could use observed transitions to predict another action's consequences. The intended setting is adaptation to a new teacher after only a small number of queries. Simplified diagnostics have been important here: demonstrating that a model can rank some actions by response movement does not establish that it has learned a reusable state-transition law.</p><h3>Measurements and evaluation</h3><p>I examine model responses before and after an edit, typically in the teacher's probability or derived response space. Useful measurements include:</p><ul><li><strong>Response movement:</strong> how much the teacher's prediction changes under an action.</li><li><strong>Coverage / novelty:</strong> whether the new response is far from previously observed response regions.</li><li><strong>Transition structure:</strong> whether the observed action-to-response relationships help predict an unseen transition.</li><li><strong>Teaching utility:</strong> whether the generated queries actually improve the student under a controlled training budget.</li></ul><p>These objectives should be evaluated separately. A model may move frequently without visiting novel regions, and increased coverage need not automatically improve student performance.</p><h3>Current status and open challenges</h3><p>This is ongoing exploratory work. Initial studies support the feasibility of producing controlled response-space movement, but other experiments expose the difficulty of learning transitions that generalize beyond a fixed image, action inventory, or teacher. I am continuing to study local structure, action semantics, and small-memory adaptation, particularly how to evaluate whether a learned transition mechanism genuinely improves the choice of queries.</p></div></main>
+
+            <footer class="footer"><p>Hsuan-Yi Lee · Computer Science and Information Engineering · NCKU</p><p>Adapted from <a href="https://github.com/uwsampa/research-group-web">UW Sampa Research Group Web</a> · <a href="/template-LICENSE.txt">CC BY-NC 4.0</a>. Layout, typography, and content modified.</p></footer>
+
+        </div> <!-- /container -->
+
+        <!-- Support retina images. -->
+        
+    </body>
+</html>

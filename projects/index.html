@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Projects | Hsuan-Yi Lee</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/group.css">
+    </head>
+    <body><a class="skip" href="#main">Skip to content</a>
+        <div class="container">
+            <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->
+            <div class="header d-flex
+                        flex-column
+                        flex-md-row justify-content-md-between">
+                <a href="/" class="site-name">Hsuan-Yi Lee</a>
+                <nav aria-label="Main navigation"><ul class="nav nav-pills justify-content-center"><li class="nav-item"><a class="nav-link "  href="/">Home</a></li><li class="nav-item"><a class="nav-link "  href="/research/">Research</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="/projects/">Projects</a></li><li class="nav-item"><a class="nav-link "  href="/experience/">Experience</a></li></ul></nav>
+            </div>
+
+            
+
+            
+
+            <main id="main"><h1>Projects</h1><div class="prose"><span class="status">Deployed prototype · Ongoing refinement</span><h2>Cross-Platform AR Computer History Exhibition</h2><p>I worked on a cross-platform augmented-reality prototype for an interactive exhibition about the history of computing. The project combines mobile AR, web-based 3D content, and location-aware experiences.</p><p>The prototype has been tested in a real physical environment, with continued work on positioning robustness and cross-device consistency.</p><h3>Motivation</h3><p>Computing history is often presented through photographs, text panels, and physical artifacts. We wanted to explore how an interactive AR experience could make the evolution of computing systems more tangible, allowing visitors to encounter digital exhibits within a real space.</p><p>#### Design challenge</p><p>A location-aware exhibition is more than a collection of 3D models. Exhibits must appear at stable locations, visitors may use different mobile devices, and the experience needs a consistent relationship between virtual content and the physical venue. This creates practical challenges in localization, scene alignment, rendering, and deployment.</p><p>#### Implementation</p><p>The project explored a cross-platform technical stack involving <strong>ARCore</strong>, <strong>ARKit</strong>, web-based 3D and rendering technologies such as <strong>Three.js/WebGL</strong>, and visual-positioning tools including <strong>MultiSet VPS</strong>. Additional prototyping touched related tools such as Needle Engine, Go, and LiDAR/point-cloud workflows. The exhibition concept included historical computing systems, personal computers, data-center technology, and quantum computing.</p><p>The prototype was taken beyond a purely local demo: we tested deployment in an actual environment and examined its behavior across devices. The implementation sought to reuse exhibit models and spatial information, while identifying where localization reliability required further improvement.</p><p>#### What I learned</p><p>This work reinforced how differently a system behaves outside a controlled development setup. A successful 3D render does not guarantee stable physical registration, and cross-platform support introduces constraints that are difficult to capture in a single desktop test. The project made me more interested in systems that combine perception, spatial computing, and user interaction.</p><p>#### Current status</p><p><strong>Functional prototype with on-site testing.</strong> Reliable long-distance localization and related integration details remain under development. This is an engineering project, not a peer-reviewed publication.</p></div></main>
+
+            <footer class="footer"><p>Hsuan-Yi Lee · Computer Science and Information Engineering · NCKU</p><p>Adapted from <a href="https://github.com/uwsampa/research-group-web">UW Sampa Research Group Web</a> · <a href="/template-LICENSE.txt">CC BY-NC 4.0</a>. Layout, typography, and content modified.</p></footer>
+
+        </div> <!-- /container -->
+
+        <!-- Support retina images. -->
+        
+    </body>
+</html>
